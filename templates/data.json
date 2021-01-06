@@ -1,0 +1,42 @@
+{
+	"order_id": 1234,
+	"sold_by": "Jinsan Technologies",
+	"delivered_by": "Rivia.AI",
+	"tracking_id": "#1234-abcd",
+	"order_date": "05-01-2021",
+	"shipping_address": {
+		"name": "Prabal Agarwal",
+		"phone": "6390001111",
+		"address_1": "#677, 1st Main, 1st Cross",
+		"address_2": "HSR Layout",
+		"city": "Bengaluru",
+		"state": "Karnataka",
+		"country": "India",
+		"pin_code": "560102"
+	},
+	"payment": {
+		"mode": "Online",
+		"amount": "1000.0",
+		"currency": "INR"
+	},
+	"return_address": {
+		"address_1": "Sierra Cartel",
+		"address_2": "HSR Layout",
+		"city": "Bengaluru",
+		"state": "Karnataka",
+		"country": "India",
+		"pin_code": "560102"
+	},
+	"line_items": [
+		{
+			"title": "Valve Mask",
+			"variant_title": "",
+			"quantity": 2
+		},
+		{
+			"title": "Sanitizer",
+			"variant_title": "100 ML",
+			"quantity": 1
+		}
+	]
+}

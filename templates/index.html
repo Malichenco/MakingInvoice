@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        h1 {
+        font-style: oblique;
+        font-family: fangsong;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center">
+        <h1>API to generate shipping label in PDF format from a JSON input file</h1>
+        <h2>Step 1: Choose a JSON file </h2>
+        <h2>Step 2: Click Submit</h2>
+        <h2>Step 3: Download the generated PDF</h2>
+        <form action = "http://localhost:5000/upload.pdf" method = "POST" 
+         enctype = "multipart/form-data">
+            <input  type = "file" name = "file" />
+            <input type = "submit"/>
+        </form>
+    </div>   
+</body>
+</html>
