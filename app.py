@@ -17,11 +17,14 @@ def index():
 def Upload():
 	inputJsonFile = request.files['file']
 	if str(inputJsonFile.filename).endswith('.json'): # handling the case if file is not .JSON
-		data = json.loads(inputJsonFile.read()) # data collected
-		result = make_response(formatPdf(data).output(dest='S').encode('latin-1'))
-		result.headers['Content-Type'] = 'application/pdf'
-		result.headers['Content-Disposition'] = 'inline; filename=shippingLabel.pdf' # use inline instead of attachment to get the previe#w
-		return result
+		try:
+			data = json.loads(inputJsonFile.read()) # data collected
+			result = make_response(formatPdf(data).output(dest='S').encode('latin-1'))
+			result.headers['Content-Type'] = 'application/pdf'
+			result.headers['Content-Disposition'] = 'inline; filename=shippingLabel.pdf' # use inline instead of attachment to get the previe#w
+			return result
+		except:
+			return "Exception occurred"
 	else:
 		return "Wrong File Uploaded"
 
