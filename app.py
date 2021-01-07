@@ -15,6 +15,13 @@ def Upload():
 	data = json.loads(inputJsonFile.read()) # data collected
 	# filtering data into different categories
 	# data = request.get_json()
+	pdfFile = formatPdf(data)
+	result = make_response(pdfFile.getvalue())
+	result.headers['Content-Type'] = 'application/pdf'
+	result.headers['Content-Disposition'] = 'inline; filename=shippingLabel.pdf' # use inline instead of attachment to get the preview
+	return result
+
+def formatPdf(data):
 	sellerName = data['sold_by']
 	deliveryAgent = data['delivered_by']
 
@@ -62,11 +69,7 @@ def Upload():
 	#formatting of pdf ends
 
 	pdf.generate() #pdf generated
-
-	result = make_response(pdfFile.getvalue())
-	result.headers['Content-Type'] = 'application/pdf'
-	result.headers['Content-Disposition'] = 'inline; filename=shippingLabel.pdf' # use inline instead of attachment to get the preview
-	return result
+	return pdfFile
 
 if __name__ == "__main__":
     app.run(debug = True)
